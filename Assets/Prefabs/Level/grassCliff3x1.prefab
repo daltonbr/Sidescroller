@@ -26,7 +26,7 @@ GameObject:
   - 4: {fileID: 454402}
   - 61: {fileID: 6122684}
   m_Layer: 0
-  m_Name: grassCliff3
+  m_Name: grassCliff3x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

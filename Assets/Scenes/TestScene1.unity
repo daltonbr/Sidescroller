@@ -128,6 +128,22 @@ Prefab:
       propertyPath: m_Name
       value: grassCliff3 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 195114, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 116964, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 141264, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 140026, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
   m_IsPrefabParent: 0
@@ -177,6 +193,22 @@ Prefab:
     - target: {fileID: 140026, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
       propertyPath: m_Name
       value: grassCliff3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 195114, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 116964, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 141264, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 140026, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
@@ -391,7 +423,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 805260459}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cliffs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,22 +591,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5045404, guid: 43d175be49882498d8a45eaf81b283ed, type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5045404, guid: 43d175be49882498d8a45eaf81b283ed, type: 2}
-      propertyPath: m_GravityScale
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11470082, guid: 43d175be49882498d8a45eaf81b283ed, type: 2}
-      propertyPath: jumpHeight
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 5045404, guid: 43d175be49882498d8a45eaf81b283ed, type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43d175be49882498d8a45eaf81b283ed, type: 2}
   m_IsPrefabParent: 0
@@ -706,6 +722,22 @@ Prefab:
     - target: {fileID: 140026, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
       propertyPath: m_Name
       value: grassCliff3 (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 195114, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 116964, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 141264, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 140026, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec22548e2bd682545a65c269143c7e8f, type: 2}
