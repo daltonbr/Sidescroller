@@ -5,6 +5,7 @@ public class Health : MonoBehaviour {
 	private int health;
 	public int healthStartValue;
 	private LevelManager levelManager;
+	public GameObject dieParticle;
 
 	void Start() {
 		levelManager = FindObjectOfType<LevelManager>();
@@ -17,6 +18,7 @@ public class Health : MonoBehaviour {
 	}
 
 	void Die() {
+		Instantiate(dieParticle, this.transform.position, this.transform.rotation);
 		if (this.gameObject.tag == ("Player")) {
 			levelManager.RespawnPlayer();
 		}
