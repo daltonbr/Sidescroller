@@ -604,6 +604,23 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6105726, guid: 43d175be49882498d8a45eaf81b283ed, type: 2}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105726, guid: 43d175be49882498d8a45eaf81b283ed, type: 2}
+      propertyPath: m_Offset.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 412890, guid: 43d175be49882498d8a45eaf81b283ed, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 147226, guid: 43d175be49882498d8a45eaf81b283ed, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43d175be49882498d8a45eaf81b283ed, type: 2}
   m_IsPrefabParent: 0
@@ -636,6 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
+  checkpointController: {fileID: 0}
 --- !u!4 &269742802
 Transform:
   m_ObjectHideFlags: 0
@@ -659,7 +677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b754fbfab870a4d82937b1a8e4717f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCheckPoint: {fileID: 358682988}
+  checkpointController: {fileID: 0}
 --- !u!1 &288318020
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,10 +884,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 421886, guid: 1806c47950713924bb7003bebfa28f08, type: 2}
   m_PrefabInternal: {fileID: 358057012}
---- !u!1 &358682988 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 128210, guid: 719c8ccb0e61e4794adf954ed9f47e7a, type: 2}
-  m_PrefabInternal: {fileID: 1287933302}
 --- !u!1 &380948957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,6 +1149,27 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &615683225 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 175576, guid: 43d175be49882498d8a45eaf81b283ed, type: 2}
+  m_PrefabInternal: {fileID: 257643304}
+--- !u!95 &615683232
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 615683225}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83f6589f6a2e04fb79f542591e9a4a9a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &642134985
 Prefab:
   m_ObjectHideFlags: 0
@@ -2111,8 +2146,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11477116, guid: 719c8ccb0e61e4794adf954ed9f47e7a, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 719c8ccb0e61e4794adf954ed9f47e7a, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1291086198 stripped
@@ -2475,24 +2509,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 483280, guid: 7a03cff7ece304af1a960e88e89c6988, type: 2}
   m_PrefabInternal: {fileID: 986657147}
---- !u!1 &1675102980 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 152370, guid: 719c8ccb0e61e4794adf954ed9f47e7a, type: 2}
-  m_PrefabInternal: {fileID: 1287933302}
---- !u!114 &1675102981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1675102980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b2f690b7279f47b7bca63faf956c730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialCheckpoint: {fileID: 0}
-  finalCheckpoint: {fileID: 0}
-  checkpoints: []
 --- !u!1 &1676629927
 GameObject:
   m_ObjectHideFlags: 0
