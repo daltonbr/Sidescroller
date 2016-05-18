@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 421760}
   - 212: {fileID: 21244476}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: grassMid.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,10 +25,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 454402}
   - 61: {fileID: 6122684}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: grassCliff3x1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2270504221434485236, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 468618}
   - 212: {fileID: 21238146}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: grassCliff_left.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 437344}
   - 212: {fileID: 21288228}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: grassCliff_right.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -15,6 +15,13 @@ public class PlayerController : MonoBehaviour {
 	private bool doubleJump;
 	private Vector2 velocity;
 	private Rigidbody2D rigidbody;
+	private Health health;
+
+	void Start() {
+		rigidbody = this.GetComponent<Rigidbody2D>();
+		velocity = rigidbody.velocity;
+		health = FindObjectOfType<Health>();
+	}
 
 	void FixedUpdate() {
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround); 
@@ -31,29 +38,19 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 		rigidbody.velocity = new Vector2 (Input.GetAxisRaw("Horizontal") * moveSpeed, velocity.y);
-		//float inputX = (Input.GetAxisRaw("Horizontal"));
-		//Move(inputX);
-	}
-
-	void Awake() {
-		rigidbody = this.GetComponent<Rigidbody2D>();
-		velocity = rigidbody.velocity;
-	}
-
-	void Update () {
-		
 	}
 
 	void Move(float inputX) {
 		rigidbody.velocity = new Vector2(inputX * moveSpeed, velocity.y);
-		Debug.Log(rigidbody.velocity);
 	}
 
 	void Jump() {
 		Vector2 input = new Vector2(velocity.x, jumpHeight);
-		//rigidbody.velocity = new Vector2(velocity.x, jumpHeight);
-		//rigidbody.velocity += new Vector2(0,jumpHeight);
 		rigidbody.AddForce(Vector2.up * jumpHeight);
-		Debug.Log(rigidbody.velocity);
+	}
+		
+	public void RespawnPlayer() {
+		Debug.Log("Player Respawn");
+		health.ResetHealth();
 	}
 }
