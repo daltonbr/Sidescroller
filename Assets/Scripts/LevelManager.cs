@@ -12,10 +12,9 @@ public class LevelManager : MonoBehaviour {
 	public float respawnDelay;
 
 	void Start () {
-		//player = GameObject.FindGameObjectWithTag("Player"); 
+		health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>(); 
 		playerController = FindObjectOfType<PlayerController>();
 		checkpointController = FindObjectOfType<CheckpointController>();
-		health = FindObjectOfType<Health>();
 	}
 
 	public void RespawnPlayer() {
