@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Jump() {
-		Vector2 input = new Vector2(velocity.x, jumpHeight);
+		//Vector2 input = new Vector2(velocity.x, jumpHeight);
 		rigidbody.AddForce(Vector2.up * jumpHeight);
 	}
 		
