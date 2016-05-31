@@ -8,16 +8,18 @@ public class LevelManager : MonoBehaviour {
 	public PlayerController playerController;
 	private Health health;
 	public GameObject respawnParticle;
-	public float initialLevelGravity;
+	//public float initialLevelGravity;
+	public CameraController cameraController;
 
 	public float respawnDelay;
 
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
-		initialLevelGravity = player.GetComponent<Rigidbody2D>().gravityScale;
+		//initialLevelGravity = player.GetComponent<Rigidbody2D>().gravityScale;
 		health = player.GetComponent<Health>(); 
 		playerController = player.GetComponent<PlayerController>();
 		checkpointController = FindObjectOfType<CheckpointController>();
+		cameraController = FindObjectOfType<CameraController>();
 	}
 
 	public void RespawnPlayer() {
@@ -28,14 +30,14 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public IEnumerator RespawnPlayerCo() {
-		//player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-		//player.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
 		yield return new WaitForSeconds(respawnDelay);
 		player.SetActive(true);
+		cameraController.isFollowing = false;
 		Debug.Log("Player Respawn");
 		health.ResetHealth();
-		player.GetComponent<Rigidbody2D>().gravityScale = initialLevelGravity;
+		//player.GetComponent<Rigidbody2D>().gravityScale = initialLevelGravity;
 		playerController.transform.position = checkpointController.GetCurrentCheckpoint().transform.position;
+		cameraController.isFollowing = true;
 		Instantiate(respawnParticle, playerController.transform.position, playerController.transform.rotation); 
 		playerController.GetComponent<SpriteRenderer>().enabled = true;
 		playerController.enabled = true;
