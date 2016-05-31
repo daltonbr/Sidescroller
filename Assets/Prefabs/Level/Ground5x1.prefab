@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 469358}
   - 212: {fileID: 21224556}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: grassMid.png (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 428820}
   - 212: {fileID: 21214782}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: grassMid.png (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 489896}
   - 212: {fileID: 21248038}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: grassMid.png (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421886}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ground5x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 409992}
   - 212: {fileID: 21240144}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: grassMid.png (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 497890}
   - 212: {fileID: 21255160}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: grassMid.png (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 428820}

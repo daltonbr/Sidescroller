@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21237628}
   - 95: {fileID: 9571522}
   m_Layer: 0
-  m_Name: flagBlue
+  m_Name: FlagBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

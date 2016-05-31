@@ -16,4 +16,10 @@ public class DestroyFinishParticle : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 	}
+
+	// Fix some unexpect behaviors of Particle Effects
+	void OnBecameInvisible() {
+		Debug.Log("Activating OnBecameInvisible on Particles");
+		Destroy(this.gameObject);
+	}
 }
