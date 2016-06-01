@@ -27,7 +27,7 @@ GameObject:
   - 212: {fileID: 21214782}
   m_Layer: 9
   m_Name: grassMid.png (0)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ GameObject:
   - 4: {fileID: 421886}
   m_Layer: 9
   m_Name: Ground5x1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
