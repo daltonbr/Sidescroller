@@ -4,12 +4,12 @@ using System.Collections;
 public class ShotController : MonoBehaviour {
 
 	public float speed;
-	private Rigidbody2D rigidbody;
+	private Rigidbody2D rb;
 	public GameObject enemyDeathParticle;
 
 	// Use this for initialization
 	void Start () {
-		rigidbody = this.GetComponent<Rigidbody2D>();
+		rb = this.GetComponent<Rigidbody2D>();
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

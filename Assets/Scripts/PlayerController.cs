@@ -4,8 +4,11 @@ using System.Collections;
 [RequireComponent (typeof (Rigidbody2D))]
 public class PlayerController : MonoBehaviour {
 
-	public float moveSpeed;
-	public float jumpHeight;
+	public int playerNumber = 1;
+	public float baseSpeed;
+	public float jumpForce;
+	public float sprintFactor = 0.3f;
+	private float moveSpeed;	// speed * sprintFactor (if used)
 	//public int energy;
 
 	public Transform groundCheck;
@@ -13,8 +16,10 @@ public class PlayerController : MonoBehaviour {
 	public LayerMask whatIsGround;
 	private bool grounded;
 	private bool doubleJump;
+	private bool sprint;
 	private Vector2 velocity;
-	private Rigidbody2D rigidbody;
+	private Rigidbody2D rb;
+
 
 	private Animator anim;
 	private bool facingRight = true;
@@ -27,6 +32,10 @@ public class PlayerController : MonoBehaviour {
 	public float maxChargeTime = 0.75f;  // 3/4 of seconds
 
 	private string fireButton;
+	private string sprintButton;
+	private string horizontalAxis;
+	private string verticalAxis;
+	private string jumpButton;
 	public float shellLifetime = 5f;
 	private float currentLaunchForce;
 	private float chargeSpeed;
@@ -37,16 +46,30 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Start() {
-		rigidbody = this.GetComponent<Rigidbody2D>();
-		velocity = rigidbody.velocity;
+		rb = this.GetComponent<Rigidbody2D>();
+		velocity = rb.velocity;
 		anim = GetComponent<Animator>();
 
+		// mapping buttons
+		fireButton = "Fire" + playerNumber;
+		sprintButton = "Sprint" + playerNumber;
+		horizontalAxis = "Horizontal" + playerNumber;
+		verticalAxis = "Vertical" + playerNumber;
+		jumpButton = "Jump" + playerNumber;
+
 		//fire
-		fireButton = "Fire1";
 		chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
 	}
 
 	void Update() {
+
+		// sprint
+		if (Input.GetButton(sprintButton)) {
+			sprint = true;
+		} else {
+			sprint = false;
+		}
+			
 		if (Input.GetButtonUp(fireButton) && !fired) {
 			Fire ();
 		} else if (currentLaunchForce >= maxLaunchForce && !fired) {
@@ -88,10 +111,10 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate() {
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround); 
 		anim.SetBool("Grounded", grounded);
-		velocity = rigidbody.velocity;
+		velocity = rb.velocity;
 
 		if (grounded) { doubleJump = false; }
-		if (Input.GetButtonDown("Jump")){
+		if (Input.GetButtonDown(jumpButton)){
 			if (grounded) {
 				Jump();
 			}
@@ -100,25 +123,31 @@ public class PlayerController : MonoBehaviour {
 				doubleJump = true;
 			}
 		}
-		rigidbody.velocity = new Vector2 (Input.GetAxisRaw("Horizontal") * moveSpeed, velocity.y);
-		anim.SetFloat("Speed", Mathf.Abs(rigidbody.velocity.x));
 
-		if (rigidbody.velocity.x > 0) {
+		if (sprint)
+			moveSpeed = baseSpeed * (1+sprintFactor) ;	// account for sprintFactor;
+		else
+			moveSpeed = baseSpeed;
+		
+		rb.velocity = new Vector2 (Input.GetAxisRaw(horizontalAxis) * baseSpeed, velocity.y);
+		anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+
+		if (rb.velocity.x > 0) {
 			this.transform.localScale = new Vector3 (1f,1f,1f);
 			facingRight = true;
-		} else if (rigidbody.velocity.x < 0) {
+		} else if (rb.velocity.x < 0) {
 			this.transform.localScale = new Vector3 (-1f,1f,1f);
 			facingRight = false;
 		}
 	}
 
 	void Move(float inputX) {
-		rigidbody.velocity = new Vector2(inputX * moveSpeed, velocity.y);
+		rb.velocity = new Vector2(inputX * moveSpeed, velocity.y);
 	}
 
 	void Jump() {
 		//Vector2 input = new Vector2(velocity.x, jumpHeight);
-		rigidbody.AddForce(Vector2.up * jumpHeight);
+		rb.AddForce(Vector2.up * jumpForce);
 	}
 		
 }

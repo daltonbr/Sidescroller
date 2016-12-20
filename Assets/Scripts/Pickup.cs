@@ -12,9 +12,9 @@ public class Pickup : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "Player") {
-			Debug.Log("Player pickup something");
+			//Debug.Log("Player pickup something");
 			scoreManager.AddPoints(points);
-			Debug.Log(this.name + " earns " + points + " points");
+			//Debug.Log(this.name + " earns " + points + " points");
 			Destroy(this.gameObject);  // maybe pooling Coins?
 		}
 	}

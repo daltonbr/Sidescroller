@@ -14,7 +14,11 @@ public class Health : MonoBehaviour {
 
 	void ApplyDamage(int damage) {
 		health -= damage;
-		if (health <= 0 ) { Die(); }
+		if (health <= 0 )
+        {
+            health = 0;
+            Die();
+        }
 	}
 
 	void Die() {

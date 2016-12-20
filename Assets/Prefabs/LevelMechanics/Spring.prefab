@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1081025641374614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 0, z: 0}
+  m_LocalPosition: {x: -2.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0.33}
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.4}
+  m_Size: {x: 0.8, y: 0.4}
 --- !u!82 &82906072999662208
 AudioSource:
   m_ObjectHideFlags: 1
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ff06188d32349bc9b912c6313c2dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springSound: {fileID: 0}
+  springSound: {fileID: 82906072999662208}
   springPower: 1000
 --- !u!212 &212938478207464360
 SpriteRenderer:
