@@ -963,10 +963,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
-    - target: {fileID: 5863524, guid: 7059805701837401e964eb6da0ffe09a, type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7059805701837401e964eb6da0ffe09a, type: 2}
   m_IsPrefabParent: 0
@@ -1386,10 +1382,6 @@ Prefab:
     - target: {fileID: 491992, guid: 5e2719029428244c38f4173c521865a8, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163476, guid: 5e2719029428244c38f4173c521865a8, type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e2719029428244c38f4173c521865a8, type: 2}
@@ -3063,6 +3055,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size.x
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 82906072999662208, guid: f322450402fea4386adaca50428f84b3,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f322450402fea4386adaca50428f84b3, type: 2}
@@ -5148,7 +5145,7 @@ GameObject:
   - component: {fileID: 1934809413}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: StaticEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

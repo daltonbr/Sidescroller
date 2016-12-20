@@ -9,8 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float jumpForce;
 	public float sprintFactor = 0.3f;
 	private float moveSpeed;	// speed * sprintFactor (if used)
-	//public int energy;
-
+	
 	public Transform groundCheck;
 	public float groundCheckRadius;
 	public LayerMask whatIsGround;
@@ -19,7 +18,6 @@ public class PlayerController : MonoBehaviour {
 	private bool sprint;
 	private Vector2 velocity;
 	private Rigidbody2D rb;
-
 
 	private Animator anim;
 	private bool facingRight = true;
@@ -30,8 +28,11 @@ public class PlayerController : MonoBehaviour {
 	public float minLaunchForce = 15f;
 	public float maxLaunchForce = 30f;
 	public float maxChargeTime = 0.75f;  // 3/4 of seconds
+    public float firePitchDelta = 0.2f;  // oscilation in pitch when firing
+    public AudioSource chargingClip;
+    public AudioSource fireClip;
 
-	private string fireButton;
+    private string fireButton;
 	private string sprintButton;
 	private string horizontalAxis;
 	private string verticalAxis;
@@ -51,14 +52,14 @@ public class PlayerController : MonoBehaviour {
 		anim = GetComponent<Animator>();
 
 		// mapping buttons
-		fireButton = "Fire" + playerNumber;
-		sprintButton = "Sprint" + playerNumber;
-		horizontalAxis = "Horizontal" + playerNumber;
-		verticalAxis = "Vertical" + playerNumber;
-		jumpButton = "Jump" + playerNumber;
+		fireButton      = "Fire" + playerNumber;
+		sprintButton    = "Sprint" + playerNumber;
+		horizontalAxis  = "Horizontal" + playerNumber;
+		verticalAxis    = "Vertical" + playerNumber;
+		jumpButton      = "Jump" + playerNumber;
 
 		//fire
-		chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
+		chargeSpeed     = (maxLaunchForce - minLaunchForce) / maxChargeTime;
 	}
 
 	void Update() {
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour {
 			//have pressed fire for the first time?
 			fired = false;
 			currentLaunchForce = minLaunchForce;
-			//shootingAudioClip.clip =  chargingClip;
+			//shootingAudioClip.clip = chargingClip;
 		}
 		else if (Input.GetButton(fireButton) && !fired) {
 			//Holding the fire button, not fired yet
@@ -103,8 +104,9 @@ public class PlayerController : MonoBehaviour {
 			shellInstance.velocity = currentLaunchForce * -1 * firePoint.right;
 		}
 		Destroy(shellInstance.gameObject, shellLifetime);
-		// shootingAudio.clip = fireClip;
-		// shoottingAudio.Play();
+        fireClip.pitch = Random.Range(1-firePitchDelta, 1+firePitchDelta);
+        fireClip.Play();
+      
 		currentLaunchForce = minLaunchForce;
 	}
 

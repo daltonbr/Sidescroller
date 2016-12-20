@@ -7,6 +7,7 @@ public class Spring : MonoBehaviour {
 	public AudioSource springSound;
 	public float springPower = 1000f;
 	private Animator springAnimator;
+    public float pitchDelta = 0.1f;
 
 	void Awake()
 	{
@@ -21,6 +22,7 @@ public class Spring : MonoBehaviour {
 			springAnimator.SetTrigger("released");
 			//Debug.Log(coll.gameObject.name + " has collided with " + this.gameObject.name);
 			coll.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * springPower);
-			springSound.Play();
+            springSound.pitch = Random.Range(1-pitchDelta, 1+pitchDelta);
+            springSound.Play();
 	}
 }
