@@ -15,18 +15,17 @@ public class CheckpointController : MonoBehaviour {
 			
 		initialCheckpoint = checkpoints[0];
 		currentCheckpoint = initialCheckpoint;
+		currentCheckpoint.GetComponent<Checkpoint>().EnableCheckpoint();
 		finalCheckpoint = checkpoints[checkpoints.Length-1];
 	}
 
-	void DisableAllCheckpointsAnim() {
-		foreach(GameObject temp in checkpoints) {
-			temp.SendMessage("DisableCheckpointAnim"); 
-		}
-	}
-
 	public void SetCurrentCheckpoint(GameObject gameObject) {
-		DisableAllCheckpointsAnim();
-		currentCheckpoint = gameObject;
+		// disable previous current checkpoint
+		currentCheckpoint.GetComponent<Checkpoint>().DisableCheckpoint();
+
+		// set a new current checkpoint
+		currentCheckpoint = gameObject;	
+		currentCheckpoint.GetComponent<Checkpoint>().EnableCheckpoint();
 	}
 
 	public GameObject GetCurrentCheckpoint() {
