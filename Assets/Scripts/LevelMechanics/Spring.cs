@@ -18,11 +18,13 @@ public class Spring : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "Player")
-			springAnimator.SetTrigger("released");
-			//Debug.Log(coll.gameObject.name + " has collided with " + this.gameObject.name);
-			coll.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * springPower);
-            springSound.pitch = Random.Range(1-pitchDelta, 1+pitchDelta);
+        if (coll.gameObject.tag == "Player")
+        {
+            springAnimator.SetTrigger("released");
+            //Debug.Log(coll.gameObject.name + " has collided with " + this.gameObject.name);
+            coll.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * springPower);
+            springSound.pitch = Random.Range(1 - pitchDelta, 1 + pitchDelta);
             springSound.Play();
+        }
 	}
 }
