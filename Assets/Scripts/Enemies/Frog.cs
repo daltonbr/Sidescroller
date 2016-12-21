@@ -7,6 +7,7 @@ public class Frog : MonoBehaviour {
     public float jumpForce = 300f;
     public Vector2 initialJumpDirection;
     public float timeBetweenJumps = 2f;   // in seconds
+    public float timeBetweenJumpsDelta = 0.5f;
 
     private Vector2 jumpDirection;
     private Rigidbody2D rb;
@@ -67,7 +68,7 @@ public class Frog : MonoBehaviour {
             }
 
             Jump();
-            yield return new WaitForSeconds(timeBetweenJumps);
+            yield return new WaitForSeconds(Random.Range(timeBetweenJumps - timeBetweenJumpsDelta, timeBetweenJumps + timeBetweenJumpsDelta));
         }
     }
 

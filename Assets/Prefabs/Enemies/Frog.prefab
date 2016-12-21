@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 61702751989089000}
   - component: {fileID: 114041371766182762}
   - component: {fileID: 95555323211623336}
+  - component: {fileID: 114591784029834706}
   m_Layer: 10
   m_Name: Frog
   m_TagString: Enemy
@@ -53,8 +54,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1076755948062620}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4170787854885926}
   m_Father: {fileID: 0}
@@ -136,13 +137,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 300
-  initialJumpDirection: {x: 0, y: 0}
+  initialJumpDirection: {x: -1, y: 3}
   timeBetweenJumps: 2
+  timeBetweenJumpsDelta: 0.5
   groundCheck: {fileID: 4170787854885926}
   groundCheckRadius: 0.1
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
+--- !u!114 &114591784029834706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1076755948062620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa0c3889ac654ab7806660f9c8d7610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthStartValue: 30
+  dieParticle: {fileID: 134496, guid: 1170d41eb0def459a8143c6ce06c5d3e, type: 2}
+  loots: {fileID: 197736, guid: 2862277c97740457486068ee8dd8735b, type: 2}
 --- !u!212 &212607204384828724
 SpriteRenderer:
   m_ObjectHideFlags: 1
