@@ -8,6 +8,7 @@ TagManager:
   - Checkpoint
   - Ground
   - StaticEnemy
+  - Shot
   layers:
   - Default
   - TransparentFX

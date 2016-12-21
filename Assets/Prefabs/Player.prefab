@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   baseSpeed: 5
-  jumpForce: 400
+  jumpForce: 500
   sprintFactor: 0.3
   groundCheck: {fileID: 412890}
   groundCheckRadius: 0.1
@@ -212,6 +212,7 @@ MonoBehaviour:
   minLaunchForce: 5
   maxLaunchForce: 50
   maxChargeTime: 1
+  firePitchDelta: 0.2
   chargingClip: {fileID: 0}
   fireClip: {fileID: 82116650907671370}
   shellLifetime: 3

@@ -6,17 +6,25 @@ public class Health : MonoBehaviour {
 	public int healthStartValue;
 	private LevelManager levelManager;
 	public GameObject dieParticle;
+    public GameObject loots;
 
 	void Start() {
 		levelManager = FindObjectOfType<LevelManager>();
+        if (!levelManager) Debug.LogError("levelManager was not found by health script in " + this.gameObject.name);
 		ResetHealth();
 	}
 
-	void ApplyDamage(int damage) {
+	public void ApplyDamage(int damage) {
+        if (damage <= 0)  // maybe throw an error
+        {
+            Debug.Log("damage must be a positive value");
+            return;
+        }
 		health -= damage;
 		if (health <= 0 )
         {
             health = 0;
+            //Debug.Log("damage was applied to " + this.gameObject.name + " health: " + health.ToString());
             Die();
         }
 	}
@@ -27,8 +35,12 @@ public class Health : MonoBehaviour {
 			levelManager.RespawnPlayer();
 		}
 		else {
-			Destroy(this);
-		}
+			if (loots)
+            {
+                Instantiate(loots, this.transform.position, this.transform.rotation);
+            }
+            Destroy(this.gameObject);
+        }
 	}
 
 	public void ResetHealth() {

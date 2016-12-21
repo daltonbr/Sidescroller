@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 11406576}
   m_Layer: 0
   m_Name: shortRay
-  m_TagString: Untagged
+  m_TagString: Shot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc44db93a497d41b3bbd6cec22f76150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  enemyDeathParticle: {fileID: 134496, guid: 1170d41eb0def459a8143c6ce06c5d3e, type: 2}
+  shellSpeed: 0
+  shellDamage: 30
 --- !u!212 &21262264
 SpriteRenderer:
   m_ObjectHideFlags: 1

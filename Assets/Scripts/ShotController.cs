@@ -4,8 +4,9 @@ using System.Collections;
 public class ShotController : MonoBehaviour {
 
 	public float shellSpeed;
+    public int shellDamage = 30;   // take this value from player later
 	private Rigidbody2D projectile;
-	public GameObject enemyDeathParticle;
+	//public GameObject enemyDeathParticle;
 
 	// Use this for initialization
 	void Start () {
@@ -13,11 +14,15 @@ public class ShotController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.tag == "Enemy") {
-			Destroy(this.gameObject);
-			Instantiate (enemyDeathParticle, other.transform.position, other.transform.rotation);
-			Destroy(other.gameObject);
-		}
+        // Send ApplyDamage to all, but dont require
+        other.gameObject.SendMessage("ApplyDamage", shellDamage, SendMessageOptions.DontRequireReceiver);
+        if (other.tag == "Enemy") {
+
+            //other.GetComponent<Health>().ApplyDamage(shellDamage);
+            //Destroy(this.gameObject);
+            //Instantiate (enemyDeathParticle, other.transform.position, other.transform.rotation);
+            //Destroy(other.gameObject);
+        }
 		if (other.tag == "Ground") {
 			Destroy(this.gameObject);
 		}
