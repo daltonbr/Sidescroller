@@ -14,7 +14,7 @@ public class ShotController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-        // Send ApplyDamage to all, but dont require
+        // Send ApplyDamage to all, but dont require and let the recipient handle according
         other.gameObject.SendMessage("ApplyDamage", shellDamage, SendMessageOptions.DontRequireReceiver);
         if (other.tag == "Enemy") {
 
