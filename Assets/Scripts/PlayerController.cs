@@ -130,8 +130,7 @@ public class PlayerController : MonoBehaviour {
 			moveSpeed = baseSpeed * (1+sprintFactor) ;	// account for sprintFactor;
 		else
 			moveSpeed = baseSpeed;
-		
-		rb.velocity = new Vector2 (Input.GetAxisRaw(horizontalAxis) * baseSpeed, velocity.y);
+        rb.velocity = new Vector2 (Input.GetAxisRaw(horizontalAxis) * baseSpeed, velocity.y);
 		anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
 
 		if (rb.velocity.x > 0) {

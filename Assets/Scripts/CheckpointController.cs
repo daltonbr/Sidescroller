@@ -10,7 +10,7 @@ public class CheckpointController : MonoBehaviour {
 
 	void Start() {
 		if (checkpoints.Length < 2) {
-			Debug.LogError("Set a minimum of 2 Checkpoints in the scene!", transform);
+			Debug.LogWarning("Set a minimum of 2 Checkpoints in the scene!", transform);
 		}
 			
 		initialCheckpoint = checkpoints[0];

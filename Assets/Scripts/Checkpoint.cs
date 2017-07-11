@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Assertions;
 
 public class Checkpoint : MonoBehaviour {
 
@@ -8,10 +9,11 @@ public class Checkpoint : MonoBehaviour {
 	public CheckpointController checkpointController;
 	private bool active;
 
-	void Start () {
-		animator = GetComponent<Animator>();
+	void Awake () {
+		animator = this.GetComponent<Animator>();
 		levelManager = FindObjectOfType<LevelManager>();
 		checkpointController = FindObjectOfType<CheckpointController>();
+        Assert.IsNotNull(animator, "Checkpoint: Animator not found!");
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -23,7 +25,7 @@ public class Checkpoint : MonoBehaviour {
 	public void EnableCheckpoint() {
 		this.active = true;
 		animator.SetBool("Active", true);
-		//Debug.Log("Activated Checkpoint: " + transform.name);
+		Debug.Log("Activated Checkpoint: " + transform.name);
 	}
 		
 	public void DisableCheckpoint() {
